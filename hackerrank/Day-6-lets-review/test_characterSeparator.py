@@ -7,4 +7,4 @@ from characterSeparator import CharacterSeparator
 def test_input_string_is_in_valid_length_range():
     string = "Hello"
     characterSeparator = CharacterSeparator()
-    assert characterSeparator.check_length(string) == True
+    assert characterSeparator.check_string_length(string) == True
