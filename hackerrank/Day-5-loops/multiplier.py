@@ -8,7 +8,7 @@ class Multiplier:
                 result = number * index
                 list_of_results.append(f"{number} x {index} = {result}")
             formatted_list = separator.join(map(str, list_of_results))
-            return(formatted_list)
+            return formatted_list
         return "Number outside valid range."
     
     def check_number_is_in_range(self, number):
