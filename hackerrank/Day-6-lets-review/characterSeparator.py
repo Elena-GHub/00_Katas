@@ -25,8 +25,12 @@ class CharacterSeparator:
                 even_characters = even_characters + string[letter]
 
         processed_string = even_characters + " " + odd_characters 
-        # below line with return required to run the tests, not for hackerrank code submission
         return processed_string
+
+    def format_inputs_to_string(self, user_list):
+        array_separator = "\n"
+        formatted_inputs = array_separator.join(map(str, user_list))
+        return formatted_inputs
 
     def split_user_inputs(self, number):
         number = int(input("How many strings do you want to process? \n (Please enter a number between 1 and 10) "))
@@ -37,11 +41,10 @@ class CharacterSeparator:
                 string = input()
                 if self.check_string_length(string):
                     user_strings.append(string)
-
         raw_inputs = [self.split_characters(item) for item in user_strings]
-        array_separator = "\n"
-        formatted_inputs = array_separator.join(map(str, raw_inputs))
-        print(formatted_inputs)
+        final_output = self.format_inputs_to_string(raw_inputs)
+        print(final_output)
+
 
 """ comment all the lines below to run the tests.
 Uncomment them to run this file and see the class working in the terminal """
