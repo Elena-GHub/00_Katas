@@ -24,4 +24,5 @@ class CharacterSeparator:
             else:
                 even_characters = even_characters + string[letter]
 
-        return even_characters + " " + odd_characters
+        processed_string = even_characters + " " + odd_characters
+        return processed_string
