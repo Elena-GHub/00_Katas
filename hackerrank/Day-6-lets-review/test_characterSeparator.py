@@ -15,4 +15,4 @@ def test_number_of_testcases():
 def test_characters_splitting_into_odd_and_even_indexed_characters():
     characterSeparator = CharacterSeparator()
     string = "Hello"
-    assert characterSeparator.splitCharacters(string) == "Hlo el"
+    assert characterSeparator.split_characters(string) == "Hlo el"

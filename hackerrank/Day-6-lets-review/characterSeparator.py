@@ -14,7 +14,7 @@ class CharacterSeparator:
             return False
         return True
 
-    def splitCharacters(self, string):
+    def split_characters(self, string):
         odd_characters = ""
         even_characters = ""
 
@@ -39,7 +39,7 @@ if characterSeparator.check_number_of_testcases(number):
         string = input()
         if characterSeparator.check_string_length(string):
             user_strings.append(string)
-raw_inputs = [characterSeparator.splitCharacters(item) for item in user_strings]
+raw_inputs = [characterSeparator.split_characters(item) for item in user_strings]
 array_separator = "\n"
 formatted_inputs = array_separator.join(map(str, raw_inputs))
 print(formatted_inputs)
