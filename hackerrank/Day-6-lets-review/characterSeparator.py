@@ -28,18 +28,23 @@ class CharacterSeparator:
         # below line with return required to run the tests, not for hackerrank code submission
         return processed_string
 
+    def split_user_inputs(self, number):
+        number = int(input("How many strings do you want to process? \n (Please enter a number between 1 and 10) "))
+
+        if self.check_number_of_testcases(number):
+            user_strings = []
+            for i in range(1, number + 1):
+                string = input()
+                if self.check_string_length(string):
+                    user_strings.append(string)
+
+        raw_inputs = [self.split_characters(item) for item in user_strings]
+        array_separator = "\n"
+        formatted_inputs = array_separator.join(map(str, raw_inputs))
+        print(formatted_inputs)
+
 """ comment all the lines below to run the tests.
 Uncomment them to run this file and see the class working in the terminal """
 
-number = int(input("How many strings do you want to process? \n (Please enter a number between 1 and 10) "))
 characterSeparator = CharacterSeparator()
-if characterSeparator.check_number_of_testcases(number):
-    user_strings = []
-    for i in range(1, number + 1):
-        string = input()
-        if characterSeparator.check_string_length(string):
-            user_strings.append(string)
-raw_inputs = [characterSeparator.split_characters(item) for item in user_strings]
-array_separator = "\n"
-formatted_inputs = array_separator.join(map(str, raw_inputs))
-print(formatted_inputs)
+characterSeparator.split_user_inputs(2)
