@@ -25,4 +25,17 @@ class CharacterSeparator:
                 even_characters = even_characters + string[letter]
 
         processed_string = even_characters + " " + odd_characters
+        print(processed_string) 
+        # below line with return required to run the tests, not for hackerrank code submission
         return processed_string
+
+""" comment all the lines below to run the tests.
+Uncomment them to run this file and see the class working in the terminal """
+
+# number = int(input("How many strings do you want to process? \n (Please enter a number between 1 and 10) "))
+# characterSeparator = CharacterSeparator()
+# if characterSeparator.check_number_of_testcases(number):
+#     for i in range(1, number + 1):
+#         string = input()
+#         characterSeparator.check_string_length(string)
+#         characterSeparator.splitCharacters(string)
