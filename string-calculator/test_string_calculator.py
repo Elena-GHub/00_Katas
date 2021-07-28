@@ -31,3 +31,10 @@ def test_input_with_custom_separator_should_return_their_sum():
     calculator = StringCalculator()
     assert calculator.add(string) == 3
     assert calculator.add(string) == 3
+
+def test_input_with_negative_number_should_return_their_sum():
+    string = '1,-2,-3'
+    message = 'error: negatives not allowed: '
+
+    calculator = StringCalculator()
+    assert calculator.add(string) == message + '-2 -3'

@@ -9,6 +9,11 @@ class StringCalculator:
         if string.startswith('//'):
             string = string.replace(string[2:3], ',')
             string = string[4:]
+        if '-' in string:
+            separator = ' '
+            message = 'error: negatives not allowed: '
+            negative_numbers = [x for x in list(string.split(',')) if int(x) < 0 ]
+            return message + separator.join(negative_numbers)
         numbers = list(string.split(','))
         integers = map(int, numbers)
         result = sum(integers)
