@@ -32,9 +32,15 @@ def test_input_with_custom_separator_should_return_their_sum():
     assert calculator.add(string) == 3
     assert calculator.add(string) == 3
 
-def test_input_with_negative_number_should_return_their_sum():
+def test_input_with_negative_number_should_return_error_message():
     string = '1,-2,-3'
     message = 'error: negatives not allowed: '
 
     calculator = StringCalculator()
     assert calculator.add(string) == message + '-2 -3'
+
+def test_input_with_number_over_one_thousand_should_be_ignored_in_the_sum():
+    string = '1001, 2'
+
+    calculator = StringCalculator()
+    assert calculator.add(string) == 2

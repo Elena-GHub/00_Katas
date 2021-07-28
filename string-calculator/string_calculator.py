@@ -16,5 +16,6 @@ class StringCalculator:
             return message + separator.join(negative_numbers)
         numbers = list(string.split(','))
         integers = map(int, numbers)
+        integers = list(filter(lambda x : x <= 1000, integers))
         result = sum(integers)
         return result
