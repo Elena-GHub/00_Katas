@@ -1,3 +1,7 @@
+# problem running with pytest
+# Run in terminal with
+# python3 -m unittest test_characterSeparator.py
+
 from characterSeparator import CharacterSeparator
 
 def test_input_string_is_in_valid_length_range():
