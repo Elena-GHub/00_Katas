@@ -50,3 +50,9 @@ def test_input_with_arbitrary_length_separators_should_return_their_sum():
 
     calculator = StringCalculator()
     assert calculator.add(string) == 6
+
+def test_input_with_multiple_single_length_separator_should_return_their_sum():
+    string = "//[*][%]\n1*2%3"
+
+    calculator = StringCalculator()
+    assert calculator.add(string) == 6

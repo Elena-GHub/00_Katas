@@ -6,9 +6,11 @@ class StringCalculator:
             return result
         if string.startswith('//['):
             string = string.replace('\n', '')
-            ending_index = string.index(']')
-            string = string.replace(string[3:ending_index], ',')
-            string = string[5:]
+            string = string.replace('//', '')
+            while ']' in string:
+                separator = string[string.find("[")+1:string.find("]")]
+                string = string.replace(separator, ',')
+                string = string[3:]
         if '\n' in string:
             string = string.replace('\n', ',')
         if string.startswith('//'):
