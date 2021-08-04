@@ -30,7 +30,7 @@ def test_input_with_custom_separator_should_return_their_sum():
 
     calculator = StringCalculator()
     assert calculator.add(string) == 3
-    assert calculator.add(string) == 3
+    assert calculator.add(second_string) == 3
 
 def test_input_with_negative_number_should_return_error_message():
     string = '1,-2,-3'
@@ -44,3 +44,9 @@ def test_input_with_number_over_one_thousand_should_be_ignored_in_the_sum():
 
     calculator = StringCalculator()
     assert calculator.add(string) == 2
+
+def test_input_with_arbitrary_length_separators_should_return_their_sum():
+    string = "//[***]\n1***2***3"
+
+    calculator = StringCalculator()
+    assert calculator.add(string) == 6

@@ -4,6 +4,11 @@ class StringCalculator:
 
         if not string:
             return result
+        if string.startswith('//['):
+            string = string.replace('\n', '')
+            ending_index = string.index(']')
+            string = string.replace(string[3:ending_index], ',')
+            string = string[5:]
         if '\n' in string:
             string = string.replace('\n', ',')
         if string.startswith('//'):
