@@ -56,3 +56,9 @@ def test_input_with_multiple_single_length_separator_should_return_their_sum():
 
     calculator = StringCalculator()
     assert calculator.add(string) == 6
+
+def test_input_with_multiple_separators_with_any_character_length_should_return_their_sum():
+    string = "//[foo][bar]\n1foo2bar3"
+
+    calculator = StringCalculator()
+    assert calculator.add(string) == 6
