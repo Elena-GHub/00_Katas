@@ -1,16 +1,21 @@
 class StringCalculator:
+
+    def convert_arbitrary_length_separator_to_single_comma(self, string):
+        string = string.replace('\n', '')
+        string = string.replace('//', '')
+        while ']' in string:
+            separator = string[string.find("[")+1:string.find("]")]
+            string = string.replace(separator, ',')
+            string = string[3:]
+        return string
+
     def add(self, string):
         result = 0
 
         if not string:
             return result
         if string.startswith('//['):
-            string = string.replace('\n', '')
-            string = string.replace('//', '')
-            while ']' in string:
-                separator = string[string.find("[")+1:string.find("]")]
-                string = string.replace(separator, ',')
-                string = string[3:]
+           string = self.convert_arbitrary_length_separator_to_single_comma(string)
         if '\n' in string:
             string = string.replace('\n', ',')
         if string.startswith('//'):
