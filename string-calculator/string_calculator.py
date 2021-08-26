@@ -9,6 +9,12 @@ class StringCalculator:
             string = string[3:]
         return string
 
+    def look_for_negative_numbers(self, string):
+        separator = ' '
+        message = 'error: negatives not allowed: '
+        negative_numbers = [x for x in list(string.split(',')) if int(x) < 0 ]
+        return message + separator.join(negative_numbers)
+    
     def add(self, string):
         result = 0
 
@@ -22,10 +28,7 @@ class StringCalculator:
             string = string.replace(string[2:3], ',')
             string = string[4:]
         if '-' in string:
-            separator = ' '
-            message = 'error: negatives not allowed: '
-            negative_numbers = [x for x in list(string.split(',')) if int(x) < 0 ]
-            return message + separator.join(negative_numbers)
+           return self.look_for_negative_numbers(string)
         numbers = list(string.split(','))
         integers = map(int, numbers)
         integers = list(filter(lambda x : x <= 1000, integers))

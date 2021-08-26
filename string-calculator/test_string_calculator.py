@@ -24,6 +24,7 @@ def test_input_with_newline_separator_should_return_their_sum():
     string = '1\n2,3'
     calculator = StringCalculator()
     assert calculator.add(string) == 6
+    
 def test_input_with_custom_separator_should_return_their_sum():
     string = '//;\n1;2'
     second_string = '//*\n1*2'
